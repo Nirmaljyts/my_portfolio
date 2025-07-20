@@ -67,7 +67,7 @@ const MyComponent = () => {
                   <div className="text-left text-base md:text-lg">
                     <p>
                       This application offers a curated selection of men&apos;s
-                      and ladies&apos; wear and shoes, providing a seamless
+                      and ladies wear and shoes, providing a seamless
                       browsing experience and easy purchasing options for
                       discerning shoppers. Explore our diverse range of
                       men&apos;s clothing and footwear to find the perfect style

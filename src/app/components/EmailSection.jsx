@@ -65,8 +65,8 @@ const EmailSection = () => {
 
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          If you’re interested in hiring me, feel free to explore my resume and
-          profile. I’m always open to exciting opportunities and would be happy
+          If you&apos;re interested in hiring me, feel free to explore my resume and
+          profile. I&apos;m always open to exciting opportunities and would be happy
           to connect.
         </p>
 

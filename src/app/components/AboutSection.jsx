@@ -14,7 +14,7 @@ const TAB_DATA = [
           Frontend Development: HTML5, CSS3, JavaScript, TypeScript, React Js,
           Vue Js, and Next Js.
         </li>
-        <li>Backend Development: I'm learning Node js.</li>
+        <li>Backend Development: I&apos;m learning Node js.</li>
         <li>
           UI/UX Design: I have experience in designing intuitive user interfaces
           and engaging user experiences.
