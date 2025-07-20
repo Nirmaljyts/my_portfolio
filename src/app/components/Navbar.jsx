@@ -91,6 +91,7 @@ const Navbar = ({ showModal }) => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         ></Link>
+
         <div className="mobile-menu block md:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
@@ -103,6 +104,7 @@ const Navbar = ({ showModal }) => {
             )}
           </button>
         </div>
+
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
             {navLinks.map((link, index) => (
@@ -120,6 +122,7 @@ const Navbar = ({ showModal }) => {
           </ul>
         </div>
       </div>
+
       {navbarOpen ? (
         <MenuOverlay links={navLinks} setNavbarOpen={setNavbarOpen} />
       ) : null}
