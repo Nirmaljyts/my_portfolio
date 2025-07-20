@@ -15,7 +15,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -35,7 +34,7 @@ export const FlipWords = ({
         setIsAnimating(false);
       }}
     >
-      <p> Hello, I&apos;m </p>
+      <p className="cursor-default">Hello, I&apos;m</p>
       <motion.div
         initial={{
           opacity: 0,
@@ -61,7 +60,7 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative cursor-default text-left text-neutral-900 dark:text-neutral-100 px-0",
           className
         )}
         key={currentWord}
@@ -77,7 +76,7 @@ export const FlipWords = ({
             }}
             className="inline-block"
           >
-            {letter}
+            {letter === " " ? "\u00A0" : letter}
           </motion.span>
         ))}
       </motion.div>

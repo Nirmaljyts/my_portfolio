@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import {
   Bars3Icon,
@@ -11,12 +11,13 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
     index: 1,
     title: "Home",
-    path: "/",
+    path: "#home",
     icon: HomeModernIcon,
   },
   {
@@ -34,13 +35,48 @@ const navLinks = [
   {
     index: 4,
     title: "Contact",
-    path: "#contact",
+    path: "#contacts",
     icon: DevicePhoneMobileIcon,
   },
 ];
 
 const Navbar = ({ showModal }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = "#home";
+      const scrollPosition = window.scrollY + window.innerHeight;
+
+      navLinks.forEach((link) => {
+        if (link.path !== "#home") {
+          const section = document.querySelector(link.path);
+          if (section) {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 100) {
+              currentSection = link.path;
+            }
+          }
+        } else if (window.scrollY < 100) {
+          currentSection = "#home";
+        }
+      });
+
+      // Handle bottom of page — activate last section
+      const pageHeight = document.documentElement.scrollHeight;
+      if (scrollPosition >= pageHeight - 50) {
+        currentSection = navLinks[navLinks.length - 1].path;
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
@@ -71,7 +107,14 @@ const Navbar = ({ showModal }) => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 ">
             {navLinks.map((link, index) => (
               <li key={link.title}>
-                <NavLink href={link.path} title={link.title} icon={link.icon} />
+                {console.log(link.path)}
+                <NavLink
+                  href={link.path}
+                  title={link.title}
+                  icon={link.icon}
+                  index={index}
+                  isActive={activeSection === link.path}
+                />
               </li>
             ))}
           </ul>

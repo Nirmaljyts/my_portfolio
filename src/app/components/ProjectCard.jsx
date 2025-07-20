@@ -5,6 +5,7 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 import Navbar from "./Navbar";
 import Image from "next/image";
 import proImg from "../../../public/images/profile_img.jpg";
+
 const Modal = ({
   imgUrl,
   title,
@@ -16,44 +17,48 @@ const Modal = ({
   return (
     <div
       id="popup-modal"
-      className={`fixed overflow-y-scroll top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50 transition-opacity ${
+      className={`fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50 transition-opacity ${
         showModal ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
       style={{
-        transition: "4s ease",
         transitionDuration: "1.2s",
         transitionTimingFunction: "ease",
       }}
     >
-      <div className="relative p-[1rem] w-full max-w-[65rem]">
-        <div className="relative bg-white rounded-lg shadow p-4 mt-[4rem] transition-transform ">
+      <div className="relative p-0 w-full max-w-[65rem] max-h-[80vh] bg-white rounded-lg shadow-lg flex flex-col">
+        {/* Close button positioned top right */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-4 py-2 transition-colors"
+          type="button"
+        >
+          X
+        </button>
+
+        {/* Scrollable content */}
+        <div className="overflow-y-auto pt-10 pb-4 px-2">
           <Image
             src={imgUrl}
             alt={title}
-            className="w-full h-auto max-h-[500px] object-contain"
+            className="w-full h-auto max-h-[350px] object-contain rounded"
             width={100}
             height={100}
           />
-          <h2 className="text-xl font-semibold my-4 text-black">{title}</h2>
+
+          <h2 className="text-xl font-bold my-4 text-black">{title}</h2>
+
           <div className="flex flex-col gap-4">
-            <p className="text-black">
-              Description: <span className="text-gray-600">{description}</span>
+            <p className="text-black font-bold">
+              Description:{" "}
+              <span className="text-gray-600 font-normal">{description}</span>
             </p>
-            <p>
+
+            <p className="font-bold">
               Technologies:{" "}
-              <span className="text-gray-600">{technologies.join(" , ")}</span>
+              <span className="text-gray-600 font-normal">
+                {technologies.join(" , ")}
+              </span>
             </p>
-          </div>
-          <div>
-            <button
-              data-modal-target="popup-modal"
-              data-modal-toggle="popup-modal"
-              className="block text-white mt-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-colors"
-              type="button"
-              onClick={onClose}
-            >
-              Close
-            </button>
           </div>
         </div>
       </div>
@@ -122,7 +127,7 @@ const ProjectCard = ({
             />
             <div className="flex flex-col">
               <p className="font-normal text-base text-gray-50 relative z-10">
-                Adarsh
+                Nirmal
               </p>
               {/* <p className="text-sm text-gray-400">2 min read</p> */}
             </div>

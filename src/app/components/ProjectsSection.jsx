@@ -3,30 +3,29 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+
 const projectsData = [
   {
     id: 1,
-    title: "Personal Growth and Stress Tracking Solution",
+    title: "CareerZopt",
     description:
-      "	Designed a platform enabling individuals to assess and improve resilience, emotional intelligence, and stress management through assessments, feedback, and performance tracking, fostering personal growth and well-being.",
+      "A user-friendly job searching platform that connects job seekers with employers. Features include job listings, advanced search filters, resume uploads, and application tracking, making the hiring process simple and efficient.",
     tag: ["All", "Web"],
-    image: "/images/projects/resnav.jpg",
-
+    image: "/images/projects/jobsearching.jpg",
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["Ruby", "My sql"],
+    technologies: ["React.js", "MySQL", "Node.js"],
   },
   {
     id: 2,
-    title: "Data management platform",
+    title: "Zocratez",
     description:
-      "	This platform is a powerful POS data solution that transforms business analytics. It provides real-time sales insights, helping businesses make accurate, data-driven decisions. More than just basic reporting, it offers advanced analytics, identify growth opportunities, and optimize operations for higher profits. With its smart insights, businesses can stay ahead of market trends, gain a competitive edge, and achieve long-term success.",
-    tag: ["All", "Web"],
-    image: "/images/projects/datamanagement.jpg",
-
+      "This is a learning platform specialized for Japanese students to improve their knowledge of English. It provides a quiz section and recognizes images to identify the exact word in English.",
+    tag: ["All", "Web", "Mobile"],
+    image: "/images/projects/Empmansys.jpg",
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "Python", "mariadb"],
+    technologies: ["React.js", "Python", "MySQL"],
   },
   {
     id: 3,
@@ -35,101 +34,53 @@ const projectsData = [
       "The software application is to encourage employees to contribute their skills to various tasks in an organization. Upon the successful completion of task,the employees performance is evaluated,and they are rated and rewarded accordingly.",
     tag: ["All", "Web"],
     image: "/images/projects/taskwhiz.jpg",
-
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "Nest js", "MySql"],
+    technologies: ["React.js", "Nest js", "MySQL"],
   },
   {
     id: 4,
     title: "Waste Classify",
     description:
-      "An admin web application, specifically designed for administrators to efficiently manage waste management processes, is integrated with Google Search for images, Google Vision API, and Amazon S3 bucket.",
+      "An admin web application designed for administrators to efficiently manage waste management processes, integrated with Google Image Search, Google Vision API, and Amazon S3 for secure image storage.",
     image: "/images/projects/wc.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "python flask", "MySql"],
+    technologies: ["React js", "Python Flask", "MySQL"],
   },
   {
     id: 5,
-    title: "Micro Blogging",
+    title: "Hokushin",
     description:
-      "A microblogging application is a social media platform designed for quick sharing of short updates, thoughts, and content, such as text and images,with a wide audience.Users can interact by commenting on posts and chatting with each other,enhancing engagement and community building.",
-    image: "/images/projects/mb.png",
-    tag: ["All", "Web"],
+      "This is a learning platform designed for Japanese students to improve their English skills. It features a canvas where users can draw Japanese letters, convert them into actual characters, and copy them to the canvas. The platform also includes a quiz section and image recognition to help identify the correct English words.",
+    tag: ["All", "Web", "Mobile"],
+    image: "/images/projects/quizapp.jpg",
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "Node js", "MongoDB"],
+    technologies: ["React.js", "Python", "MySQL"],
   },
-  // {
-  //   id: 3,
-  //   title: "Task-Whiz",
-  //   description:
-  //     "The System is a web application to encourage employees to contribute their skills to various tasks in an organization. Upon the successful completion of the task, the employee’s performance is evaluated, and they are rated and rewarded accordingly.",
-  //   image: "/images/projects/taskwhiz.jpg",
-  //   tag: ["All", "Web"],
-  //   gitUrl: "/",
-  //   previewUrl: "/",
-  // },
   {
     id: 6,
-    title: "Restaurant Management System",
+    title: "PCP Attendance Management System",
     description:
-      "A restaurant management project involves designing and implementing acomprehensive system to streamline various aspects of restaurant operations, such as table reservations, order processing, inventory management, and customer interactions, aiming to enhance efficiency and customer satisfaction.",
-
-    image: "/images/projects/rms.png",
+      "A system designed to streamline employee attendance, leave, and shift management. It enables managers to mark attendance, manage leave requests, adjust shift timings, access employee details, and generate reports, improving overall workforce efficiency.",
+    image: "/images/projects/datamanagement.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "Node js", "MongoDB"],
+    technologies: ["Vue.js", "PHP Laravel", "MySQL"],
   },
   {
     id: 7,
-    title: "E-commerce Application",
+    title: "PCP Kitchen",
     description:
-      " This application offers a curated selection of men's and ladies wear and shoes, providing a seamless browsing experience and easy purchasing options for discerning shoppers. Explore our diverse range of men's clothing and footwear to find the perfect style and fit for any occasion.",
-    image: "/images/projects/ec.jpg",
-
-    tag: ["All", "Web", "Personal projects"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technologies: ["Next js", "Sanity"],
-  },
-  {
-    id: 8,
-    title: "Quiz Application",
-    description:
-      "This application offers an engaging platform for users to test their knowledge across various topics, with interactive quizzes and instant feedback. Dive into a fun and educational experience, sharpening your skills while enjoying challenging trivia questions",
-    image: "/images/projects/qa.jpg",
-
+      "A system designed to manage kitchen operations by updating the status of food preparation, mapping paths to each ingredient and dish, providing delivery instructions, and scheduling the food preparation timeline using interactive Chart.js charts with drag-and-drop functionality. This enhances planning flexibility and overall workforce efficiency.",
+    image: "/images/projects/rms.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
-    technologies: ["React js", "Node js"],
-  },
-  {
-    id: 9,
-    title: "Wallpaper Application",
-    description:
-      " This app features a seamless image downloading and sharing capability, comprehensive filtering options (including the latest and most relevant wallpapers, orientation, type, and colors), and a user-friendly day/night mode. Additionally, it supports infinite scrolling for an uninterrupted browsing experience and incorporates a powerful search function to help users quickly find the perfect wallpaper.",
-
-    image: "/images/projects/wda.jpg",
-    tag: ["All", "Web", "Mobile", "Personal projects"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technologies: ["React Native"],
-  },
-  {
-    id: 10,
-    title: "Employee Management System",
-    description:
-      "A web-based application used to manage jobs and employees. The portal consists of two main types of users: Employees and Admins. Employees can search for jobs, edit their profiles, and apply for jobs through the system. Admins can manage jobs, employees, and accept/reject job responses made by employees.",
-    image: "/images/projects/Empmansys.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-    technologies: ["Angular"],
+    technologies: ["Vue.js", "PHP Laravel", "MySQL"],
   },
 ];
 
@@ -156,49 +107,58 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
+
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
           isSelected={tag === "All"}
         />
+
         <ProjectTag
           onClick={handleTagChange}
           name="Web"
           isSelected={tag === "Web"}
         />
+
         <ProjectTag
           onClick={handleTagChange}
           name="Mobile"
           isSelected={tag === "Mobile"}
         />
+
         <ProjectTag
           onClick={handleTagChange}
           name="Personal projects"
           isSelected={tag === "Personal projects"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-              technologies={project.technologies}
-            />
-          </motion.li>
-        ))}
-      </ul>
+
+      {filteredProjects.length > 0 ? (
+        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                technologies={project.technologies}
+              />
+            </motion.li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-center text-white text-sm py-8">No Projects</p>
+      )}
     </section>
   );
 };

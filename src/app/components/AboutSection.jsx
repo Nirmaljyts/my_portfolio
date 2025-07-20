@@ -11,20 +11,17 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2 lg:h-[19rem]">
         <li>
-          Frontend Development: HTML5, CSS3, JavaScript, TypeScript, React.js,
-          Vue.js,Next js,React Native,Angular
+          Frontend Development: HTML5, CSS3, JavaScript, TypeScript, React Js,
+          Vue Js, and Next Js.
         </li>
-        <li>
-          Backend Development: I have experience in Node js,Ruby on rails and
-          PHP.
-        </li>
+        <li>Backend Development: I'm learning Node js.</li>
         <li>
           UI/UX Design: I have experience in designing intuitive user interfaces
           and engaging user experiences.
         </li>
         <li>
-          CSS Frameworks: Proficient in using Tailwind CSS to streamline the
-          styling process and create beautiful designs.
+          CSS Frameworks: Proficient in using Tailwind CSS & Bootstrap to
+          streamline the styling process and create beautiful designs.
         </li>
         <li>
           Responsive Design: Ensuring that web applications look great and
@@ -32,14 +29,13 @@ const TAB_DATA = [
           my top priorities.
         </li>
         <li>
-          Testing and Debugging: Experienced in using Jest for unit testing and
-          Postman for API testing to ensure the reliability and functionality of
-          applications.
+          Testing and Debugging: Experienced in using Jest for unit testing to
+          ensure the reliability and functionality of applications.
         </li>
-        <li>
+        {/* <li>
           Database Management: Skilled in working with MySQL for database
           management and development.
-        </li>
+        </li> */}
       </ul>
     ),
   },
@@ -48,9 +44,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>MCA from Marian College,Kuttikanam (2019-2022)</li>
         <li>
-          B.Voc Chemistry from St.Berchmans College,Changanassery(2016-2019)
+          BTech from Baselios Thomas I Catholicos College of Engineering &
+          Technology (2016-2020)
         </li>
       </ul>
     ),
@@ -60,8 +56,7 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>React Js</li>
-        <li>SQL and Relational Databases</li>
+        <li>React Js (2019-2020)</li>
       </ul>
     ),
   },
@@ -97,15 +92,16 @@ const AboutSection = () => {
             }}
           />
         </div>
+
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a passionate web developer with 3 years of experience,
+            I am a passionate web developer with 5 years of experience,
             specializing in creating interactive and responsive web
-            applications. With a solid foundation in HTML,CSS,JavaScript,React
-            js,Vue js,Next js,Redux Toolkit and git, I am equipped to tackle a
-            wide range of development challenges. As a quick learner, I am
-            always eager to expand my knowledge and skill set, staying
+            applications. With a solid foundation in HTML, CSS, JavaScript,
+            React Js, Vue Js, Next Js, Redux Toolkit and git, I am equipped to
+            tackle a wide range of development challenges. As a quick learner, I
+            am always eager to expand my knowledge and skill set, staying
             up-to-date with the latest technologies and best practices in web
             development. I thrive in collaborative environments and am excited
             about the opportunity to work with talented individuals to create
@@ -135,6 +131,7 @@ const AboutSection = () => {
                 Certifications{" "}
               </TabButton>
             </div>
+
             <div className="mt-8 ">
               {TAB_DATA.find((t) => t.id === tab).content}
             </div>

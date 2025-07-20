@@ -1,9 +1,9 @@
 import React from "react";
 
-const NavLink = ({ href, title, icon: Icon, click, index }) => {
+const NavLink = ({ href, title, icon: Icon, click, index, isActive }) => {
   const handleClick = (event) => {
     event.preventDefault();
-    if (href === "/") {
+    if (href === "#home") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -16,7 +16,7 @@ const NavLink = ({ href, title, icon: Icon, click, index }) => {
         });
       }
     }
-    click();
+    // click();
   };
 
   return (
@@ -24,14 +24,12 @@ const NavLink = ({ href, title, icon: Icon, click, index }) => {
       <a
         href={href}
         onClick={handleClick}
-        className="flex items-center py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white transition-colors"
+        className={`flex items-center py-2 pl-3 pr-4 ${
+          isActive ? "text-white font-bold" : "text-[#a2a5a8]"
+        } sm:text-xl rounded md:p-0 hover:text-white transition-colors`}
       >
-        <div className="flex flex-row gap-2 max-sm:mt-[5px]">
-          <Icon
-            className={`h-5 w-5 mr-2 mt-[5px]  ${
-              index === 3 ? "ml-[14px]" : ""
-            }`}
-          />
+        <div className="flex flex-row items-center gap-2">
+          <Icon className={`h-5 w-5 mr-2 mt-[5px]`} />
           <span className="text-2xl">{title}</span>
         </div>
       </a>

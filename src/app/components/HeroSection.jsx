@@ -3,12 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-
-import resumePDF from "../assets/Adarsh_resume.pdf";
+import resumePDF from "../assets/Nirmal_resume.pdf";
 import { TextGenerateEffectDemo } from "./TextGenerateEffectDemo";
 import FlipWord from "../components/Flipword";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import profile_img from "../../../public/images/profile_img.jpg";
+import AchievementsSection from "./AchievementsSection";
+
 const HeroSection = () => {
   const toContact = (href) => {
     const element = document.querySelector(href);
@@ -21,14 +22,16 @@ const HeroSection = () => {
 
   const Roles = [
     "Web Developer",
-    " Mobile Developer",
+    "React.Js Developer",
+    "Vue.Js Developer",
     "UI/UX Designer",
     "Frontend Specialist",
   ];
   const AboutMe =
-    "Energetic and results-oriented Full Stack Developer with 3 years of professional experience, specializing in front-end development and user interface design. Proficient in building responsive, user-friendly web applications using modern JavaScript frameworks and backend technologies. Passionate about crafting seamless user experiences and continually exploring the latest front-end trends, tools, and best practices. While capable across the full stack, I thrive in frontend-focused roles and enjoy bringing designs to life through clean, maintainable code. Dedicated to continuous learning and contributing to collaborative, innovative teams to deliver impactful solutions.";
+    "Frontend developer with 5 years of experience in React.js, Vue.js, and delivering scalable & user-friendly web applications across implementation and support projects. Proficient in building responsive UIs, translating requirements into efficient solutions, and collaborating with cross-functional teams. Passionate about crafting seamless user experiences and continually exploring the latest front-end trends, tools, and best practices. I thrive in frontend-focused roles and enjoy bringing designs to life through clean, maintainable code. Dedicated to continuous learning and contributing to collaborative, innovative teams to deliver impactful solutions.";
+
   return (
-    <section className="lg:py-16">
+    <section id="home">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -41,6 +44,7 @@ const HeroSection = () => {
           </h1>
 
           <TextGenerateEffectDemo text={AboutMe} />
+
           <div className="flex gap-5 mt-[2rem] ">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -51,12 +55,14 @@ const HeroSection = () => {
               <button onClick={() => toContact("#contact")}>
                 <HoverBorderGradientDemo text={"Hire Me"} />
               </button>
+
               <a href={resumePDF} download>
                 <HoverBorderGradientDemo text={"Download Resume"} />
               </a>
             </motion.div>
           </div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -85,6 +91,8 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      <AchievementsSection/>
     </section>
   );
 };
