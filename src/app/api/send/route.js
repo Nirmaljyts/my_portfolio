@@ -1,4 +1,4 @@
-import emailjs from "emailjs";
+import * as emailjs from '@emailjs/browser';
 
 const serviceId = "service_z7v7jmo";
 const templateId = "template_9cgo89l";

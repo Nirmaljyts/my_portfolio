@@ -28,9 +28,9 @@ const NavLink = ({ href, title, icon: Icon, click, index, isActive }) => {
           isActive ? "text-white font-bold" : "text-[#a2a5a8]"
         } sm:text-xl rounded md:p-0 hover:text-white transition-colors`}
       >
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center ">
           <Icon className={`h-5 w-5 mr-2 mt-[5px]`} />
-          <span className="text-2xl">{title}</span>
+          <span className="text-2xl">{title}55</span>
         </div>
       </a>
     </div>
