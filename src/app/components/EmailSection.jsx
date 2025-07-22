@@ -54,20 +54,20 @@ const EmailSection = () => {
   return (
     <section
       id="contacts"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="grid md:grid-cols-2 my-12 md:my-12 lg:py-24 gap-4 relative sm: py-2 sm:my-4"
     >
-      <div className="absolute bottom-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-52 w-80 z-0 blur-lg top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      {/* <div className="absolute bottom-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-52 w-80 z-0 blur-lg top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div> */}
 
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
+        <h5 className="text-2xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
 
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          If you&apos;re interested in hiring me, feel free to explore my resume and
-          profile. I&apos;m always open to exciting opportunities and would be happy
-          to connect.
+          If you&apos;re interested in hiring me, feel free to explore my resume
+          and profile. I&apos;m always open to exciting opportunities and would
+          be happy to connect.
         </p>
 
         <div className="socials flex flex-row gap-2">
@@ -128,7 +128,7 @@ const EmailSection = () => {
             />
           </div>
 
-          <div className="mb-6">
+          <div className="mb-2">
             <label
               htmlFor="message"
               className="text-white block text-sm mb-2 font-medium"
@@ -139,10 +139,16 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Let&apos;s talk about..."
+              className="bg-[#18191E] min-h-[40px] max-h-[200px] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Let's talk about..."
               required
             />
+          </div>
+
+          <div className="h-8 flex items-center justify-start">
+            {emailSubmitted && (
+              <p className="text-blue-500 text-sm">Email sent successfully!</p>
+            )}
           </div>
 
           <div className="w-full float-right flex items-end justify-end">
@@ -151,10 +157,6 @@ const EmailSection = () => {
             </button>
           </div>
         </form>
-
-        {emailSubmitted && (
-          <p className="text-blue-500 text-sm">Email sent successfully!</p>
-        )}
       </div>
     </section>
   );
