@@ -73,7 +73,7 @@ const projectsData = [
   },
   {
     id: 7,
-    title: "PCP Kitchen",
+    title: "PCP Kitchen Management System",
     description:
       "A system designed to manage kitchen operations by updating the status of food preparation, mapping paths to each ingredient and dish, providing delivery instructions, and scheduling the food preparation timeline using interactive Chart.js charts with drag-and-drop functionality. This enhances planning flexibility and overall workforce efficiency.",
     image: "/images/projects/rms.jpg",
