@@ -30,7 +30,7 @@ const NavLink = ({ href, title, icon: Icon, click, index, isActive }) => {
       >
         <div className="flex flex-row items-center ">
           <Icon className={`h-5 w-5 mr-2 mt-[5px]`} />
-          <span className="text-2xl">{title}55</span>
+          <span className="text-2xl">{title}</span>
         </div>
       </a>
     </div>
