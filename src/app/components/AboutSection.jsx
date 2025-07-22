@@ -95,6 +95,7 @@ const AboutSection = () => {
 
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+
           <p className="text-base lg:text-lg">
             I am a passionate web developer with 5 years of experience,
             specializing in creating interactive and responsive web
@@ -107,6 +108,7 @@ const AboutSection = () => {
             about the opportunity to work with talented individuals to create
             amazing applications.
           </p>
+          
           <div className="lg:h-80">
             <div className="flex flex-row justify-start mt-8 ">
               <TabButton
