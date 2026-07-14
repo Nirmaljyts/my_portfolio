@@ -35,7 +35,7 @@ const EmailSection = () => {
 
     emailjs
       .send("service_s3wf9kk", "template_6kin9uu", templateParams, {
-        publicKey: "XSch4Im3fFEIO9vEp",
+        publicKey: "PmLpCDR_tk6KpV7cT",
       })
       .then(
         (response) => {
